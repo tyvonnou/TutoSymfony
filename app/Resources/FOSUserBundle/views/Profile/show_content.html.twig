@@ -1,0 +1,16 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="fos_user_user_show">
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+  Connecté en tant que {{ app.user.username }}
+  -
+  <a href="{{ path('fos_user_profile_edit') }}" > Modifier </a>
+  -
+  <a href="{{ path('fos_user_change_password') }}"> Changer de mot de passe</a>
+  <br />
+
+
+{% endif %}
+    <p>{{ 'Identifiant'|trans }}: {{ user.username }}</p>
+    <p>{{ 'Email'|trans }}: {{ user.email }}</p>
+</div>
